@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "wheel", "setuptools_scm[toml]>=3.4.3", "kaitaiStructCompile[toml]"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "SpecprParser"
+authors = [{name = "KOLANICH"}]
+description = "a parser for SPECtrum Processing Routines Data Format 3/4/88"
+readme = "ReadMe.md"
+keywords = ["spectroscopy", "specpr", "parser", "kaitai"]
+license = {text = "Unlicense"}
+classifiers = [
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	"Operating System :: OS Independent",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+	#"Topic :: Science :: Spectroscopy",
+]
+urls = {Homepage = "https://github.com/KOLANICH-physics/SpecprParser.py"}
+dependencies = [
+	"kaitaistruct", # @ git+https://github.com/kaitai-io/kaitai_struct_python_runtime.py#egg=kaitaistruct
+	"numpy",
+]
+dynamic = ["version"]
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = true
+packages = ["SpecprParser"]
+
+[tool.setuptools_scm]
